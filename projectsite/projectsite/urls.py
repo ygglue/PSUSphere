@@ -24,7 +24,11 @@ from studentorg.views import (HomePageView,
                               OrgMemberList, 
                               OrgMemberCreateView, 
                               OrgMemberUpdateView,
-                              OrgMemberDeleteView
+                              OrgMemberDeleteView,
+                              StudentList,
+                              StudentCreateView,
+                              StudentUpdateView,
+                              StudentDeleteView
 )
 from studentorg import views
 
@@ -35,8 +39,14 @@ urlpatterns = [
     path('organization_list/add', OrganizationCreateView.as_view(), name='organization-add'),
     path('organization_list/<pk>',OrganizationUpdateView.as_view(), name='organization-update'),
     path('organization_list/<pk>/delete', OrganizationDeleteView.as_view(), name='organization-delete'),
+
     path('member_list', OrgMemberList.as_view(), name='member-list'), 
     path('member_list/add', OrgMemberCreateView.as_view(), name='member-add'), 
     path('member_list/<pk>', OrgMemberUpdateView.as_view(), name='member-update'), 
     path('member_list/<pk>/delete', OrgMemberDeleteView.as_view(), name='member-delete'), 
+    
+    path('student_list', StudentList.as_view(), name='student-list'), 
+    path('student_list/add', StudentCreateView.as_view(), name='student-add'), 
+    path('student_list/<pk>', StudentUpdateView.as_view(), name='student-update'), 
+    path('student_list/<pk>/delete', StudentDeleteView.as_view(), name='student-delete'), 
 ]
